@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dare Roulette - Create New User</title>
+    </head>
+    <body>
+        <h1>Create New User</h1>
+        <form name="userCreationForm" onsubmit="createUser()" method="post" action="settings.php">
+            Username:
+            <input type="text" name="username" required><br>
+            Password:
+            <input type="password" name="password" required><br>
+            Confirm Password:
+            <input type="password" name="confirmPassword" required><br>
+            <input type="submit">
+        </form>
+        <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
+        <script>
+          // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyDY9l0sP24x6mpFuetuodT7E9FJGWePfVA",
+                authDomain: "dare-roulette.firebaseapp.com",
+                databaseURL: "https://dare-roulette.firebaseio.com",
+                projectId: "dare-roulette",
+                storageBucket: "dare-roulette.appspot.com",
+                messagingSenderId: "522676418195"
+            };
+            firebase.initializeApp(config);
+            function createUser(){
+                var valid = true;
+                var newUsername = document.forms["userCreationForm"]["username"].value;
+                var newPassword = document.forms["userCreationForm"]["password"].value;
+                var confirmPassword = document.forms["userCreationForm"]["confirmPassword"].value;
+                
+                alert("okay got the stuff...");
+                //make sure passwords are the same
+                if(confirmPassword != newPassword) {
+                    alert("Error: passwords don't match...");
+                    valid = false;
+                }
+                
+                //make sure user with same name doesn't exists
+                firebase.database().ref('users/').once('value').then(function(snapshot) {
+                snapshot.forEach(function (snapChild) {
+                    console.log(snapChild.val().username +" " + snapChild.val().password); 
+                    if(snapChild.val().username == newUsername){
+                        valid = false;
+                    }
+                    });
+                
+                });
+                    
+                if(valid != false) {
+                    var dbRef = firebase.database().ref('users');
+                    dbRef.push({
+                        'username': newUsername,
+                        'password': newPassword
+                    });
+                }
+            }
+        </script>
+    </body>
+</html>

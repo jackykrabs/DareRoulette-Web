@@ -8,11 +8,9 @@
     </head>
     <body>
         <?php
-            if($_SESSION["auth"] == NULL){
-                header("Location: index.php");
-                exit;
-            }
-            echo "Welcome, ".$_SESSION["uname"]."!";
+            echo "Welcome, ".$_SESSION['username']."!";
+            if($_SESSION['username'] == 'test')
+                echo "<br><b>User Authenticated...full access granted.</b><br>";
         ?>
         <form action="settings2.php" method="post">
             <label for="numPlayers">Number of Players</label>
@@ -38,7 +36,13 @@
                 <option value=3>3</option>
             </select>
             <br>
+            <?php
+               if($_SESSION['username'] == 'test')
+                    echo "<br><button onclick='showAllDares()'>Show All Dares</button><br>";
+                    echo "<button onclick='logout()'>Logout</button><br>";
+            ?>
             <button type="submit">Submit</button>
+         
         </form>
     </body>
 </html>
