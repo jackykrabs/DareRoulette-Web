@@ -1,0 +1,20 @@
+.header {
+    font-family: 'Concert One', cursive;
+    margin: auto;
+    width: 50%;
+    background-color: black;
+    color: #fff;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #00ffff, 0 0 30px #00ffff;
+    text-align: center;
+    font-size: 40px;
+    padding: 10px;
+}
+
+.loginContainer {
+    margin: auto;
+    text-align: center;
+    padding: 5px;
+    margin-top: 20px;
+    width: 25%;
+    background-color: lightgray;
+}
