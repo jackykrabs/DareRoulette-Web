@@ -1,20 +1,57 @@
 .header {
     font-family: 'Concert One', cursive;
-    margin: auto;
     width: 50%;
     background-color: black;
     color: #fff;
     text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #00ffff, 0 0 30px #00ffff;
-    text-align: center;
     font-size: 40px;
-    padding: 10px;
 }
 
-.loginContainer {
+body {
+    background-color: darkslategray;
+}
+#greetingContainer, #formContainer, #rulesContainer, #settingsHeader, #playerLabel {
+    font-family: "Arial Black", Gadget, sans-serif;
+    font-size: 18px;
+    background-color: black;
+    color: turquoise;
+    width: 40%;
+}
+div {
     margin: auto;
+    padding: 10px;
     text-align: center;
+}
+
+#formContainer {
+    height: 300px;
+}
+#settingsHeader {
+    margin-bottom: 10px;
+    width: 30%;
+}
+.loginContainer {
     padding: 5px;
     margin-top: 20px;
+    color: turquoise;
     width: 25%;
-    background-color: lightgray;
+    background-color: black;
+}
+
+#playerLabel {
+    text-align: left;
+    font-size: 12px;
+    width: 100px;
+    margin-left: 0;
+    padding: 2px;
+}
+button:hover {
+    color: black;
+    background-color: turquoise;
+}
+button {
+    background-color: black;
+    color: turquoise;
+    border-style: solid;
+    border-color: turquoise;
 }

@@ -1,0 +1,58 @@
+body {
+    background-color: darkslategray;
+}
+#darePresenter {
+    background-color: black;
+    color: turquoise;
+    font-family:  "Arial Black", Gadget, sans-serif;
+    width: 35%;
+    margin-bottom: 20px;
+}
+#gunContainer {
+    margin: auto;
+    text-align: center;
+    align-content: center;
+    width: 735px;
+    height: 200px;
+}
+.optionContainer {
+    background-color:slategray;
+    width: 245px;
+    height: 200px;
+    align-content: center;
+    display: inline;
+    float: left;
+}
+
+button {
+    margin: 10px;
+    text-align: center;
+    background-color: black;
+    color: turquoise;
+    border-style: solid;
+    border-color: turquoise;
+}
+img {
+    margin: 10px;
+    display:block;
+    clear: both;
+}
+div {
+    margin: auto;
+    text-align: center;
+}
+
+#groupContainer {
+    width:80%;
+    display:block;
+}
+.playerContainer {
+    border: 5px solid black;
+    float: left;
+    margin: 10px;
+    padding: 10px;
+    text-align: left;
+    background-color: black;
+    color: turquoise;
+}
+
